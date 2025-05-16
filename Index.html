@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurt Bonnici | Design</title>
+
+  <link rel="icon" href="./Images/Favicon.png" type="image/png">
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+     /* Smooth Scrolling */
+     html {
+      scroll-behavior: smooth; 
+    }
+
+    .navbar-light .navbar-brand {
+      color: #000000; 
+    }
+ 
+    .hover-label {
+      position: absolute;
+      pointer-events: none;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 8px 14px;
+      border-radius: 12px;
+      color: white;
+      font-size: 14px;
+      font-weight: 400;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: 10;
+    }
+
+    #carouselExample,
+    #carouselExample .carousel-item img {
+      cursor: none !important;
+    }
+
+    .custom-btn {
+  margin-left: 40px;
+}
+
+  .custom-btn {
+    display: inline-block;
+    padding: 5px 20px;
+    font-size: 0.9rem;
+    color: #000;
+    border: 0px solid #000;
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-right: -30px;
+  }
+  
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">KURT BONNICI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="aboutme.html">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html">Projects</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <a class="contact-btn" href="contact.html">Contact</a>
+          </li>   
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    let lastScrollTop = 0;
+    const navbar = document.getElementById("navbar");
+  
+    window.addEventListener("scroll", function () {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down → Hide navbar
+        navbar.style.top = "-100px"; /* Moves navbar up out of view */
+      } else {
+        // Scrolling up → Show navbar
+        navbar.style.top = "0";
+      }
+  
+      lastScrollTop = scrollTop;
+    });
+  </script>
+
+  <br> <br>
+  
+<!-- Carousel -->
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false" style="position: relative;">
+  <div class="hover-label">Open Project</div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="project5.html">
+        <img src="./Images/Box Mockup.jpg" class="d-block w-100" alt="Slide 1">
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="project6.html">
+        <img src="./Images/ChronoCraft Logo Box Mockup.jpg" class="d-block w-100" alt="Slide 2">
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="project7.html">
+        <img src="./Images/Mug Mockup Zoomed Out.jpg" class="d-block w-100" alt="Slide 3">
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="project8.html">
+        <img src="./Images/Editorial Spread Statue Zoomed Out.jpg" class="d-block w-100" alt="Slide 4">
+      </a>
+    </div>
+  </div>
+
+  <!-- Persistent Hover Label -->
+  <div class="hover-label">Open Project</div>
+</div>
+
+<script>
+  document.querySelectorAll('.hover-area').forEach(area => {
+    const label = area.querySelector('.floating-label');
+
+    area.addEventListener('mousemove', e => {
+      const rect = area.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      label.style.left = `${x}px`;
+      label.style.top = `${y}px`;
+      label.style.opacity = '1';
+    });
+
+    area.addEventListener('mouseleave', () => {
+      label.style.opacity = '0';
+    });
+  });
+</script>
+
+  <!-- Carousel Prev Button -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" onmouseup="this.blur()">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+  </button>
+
+  <!-- Carousel Next Button -->
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" onmouseup="this.blur()">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+  </button>
+  </div>
+
+  <section id="chosen-projects" class="py-5">
+      <h2 class="section-title">CHOSEN PROJECTS</h2>
+  
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <a href="project1.html" class="card-link col-12 col-md-6">
+          <div class="card custom-card position-relative overflow-hidden">
+            <img src="./Images/The Penguin Posters Mockups.jpg" class="card-img-top" alt="Project 1">
+        
+            <!-- Overlay with text -->
+            <div class="card-overlay">
+              <h5 class="card-title">The Penguin</h5>
+              <p class="card-text">POSTER SERIES</p>
+            </div>
+          </div>
+        </a>
+        
+        <!-- Card 2 -->
+        <a href="project2.html" class="card-link col-12 col-md-6">
+          <div class="card custom-card position-relative overflow-hidden">
+            <img src="./Images/The Divine Remnant Mockup Zoomed In.jpg" class="card-img-top" alt="Project 1">
+        
+            <!-- Overlay with text -->
+            <div class="card-overlay">
+              <h5 class="card-title">The Divine Remnant</h5>
+              <p class="card-text">EXPERIMENTAL PRINT</p>
+            </div>
+          </div>
+        </a>
+      
+        <!-- Card 3 -->
+        <a href="project3.html" class="card-link col-12 col-md-6">
+          <div class="card custom-card position-relative overflow-hidden">
+            <img src="./Images/Ecovista Logo Poster Mockup.jpg" class="card-img-top" alt="Project 1">
+        
+            <!-- Overlay with text -->
+            <div class="card-overlay">
+              <h5 class="card-title">Ecovista</h5>
+              <p class="card-text">LOGO DESIGN</p>
+            </div>
+          </div>
+        </a>
+      
+        <!-- Card 4 -->
+        <a href="project4.html" class="card-link col-12 col-md-6">
+          <div class="card custom-card position-relative overflow-hidden">
+            <img src="./Images/Product Manipulation 4.jpg" class="card-img-top" alt="Project 1">
+        
+            <!-- Overlay with text -->
+            <div class="card-overlay">
+              <h5 class="card-title">Product Manipulation</h5>
+              <p class="card-text">CREATIVE PRODUCT</p>
+            </div>
+          </div>
+        </a>
+      </div>
+  </section>
+
+  <br> <br> 
+
+    <!-- About Me -->
+  <h2 class="section-title">ABOUT ME</h2>
+  <section id="about-me">
+    <div class="about-me-container">
+      <p>
+        I'm Kurt, a graphic design student creating bold, strategic branding, logos, posters, and print media.
+      </p>
+    </div>
+  </section>
+
+<br> <br> <br> <br> <br>
+
+  <!-- Contact Section -->
+  <h2 class="sectiontitle">CONTACT</h2>
+<section id="contact">
+  <section class="cta-section text-center">
+    <h2>Interested in my work?</h2>
+    <p>If you’d like to collaborate or have a project in mind, I’d love to hear from you.</p>
+    <a href="contact.html" class="cta-button">Contact Me</a>
+  </section>
+    
+    <!-- Hidden fields -->
+<input type="hidden" name="_subject" value="New message from your portfolio site!">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+    <div class="contact-info">
+      <p class="contact-category">CONTACT DETAILS</p>
+      <a href="mailto:kbonnici06@gmail.com" target="_blank" style="text-decoration: none;"><p class="contact-text">kbonnici06@gmail.com</p></a>
+
+      <p class="contact-category">FACEBOOK</p>
+  <p class="contact-text">
+    <a href="https://www.facebook.com/kurt.bonnici.06" target="_blank" style="text-decoration: none;">@kurt.bonnici.06</a>
+  </p>
+
+      <p class="contact-category">INSTAGRAM</p>
+  <p class="contact-text">
+    <a href="https://www.instagram.com/kurt.bonnici" target="_blank" style="text-decoration: none;">@kurt.bonnici</a>
+  </p>
+
+       <p class="contact-category">LINKEDIN</p>
+  <p class="contact-text">
+    <a href="https://www.linkedin.com/in/kurt-bonnici-10a471280/" target="_blank" style="text-decoration: none;">Kurt Bonnici</a>
+  </p>
+</div>
+    </div>
+</section>
+
+<br> <br> <br> <br>
+
+  <!-- Links -->
+  <div class="links">
+  <h2 class="section-title">LINKS</h2>
+  <section id="links">
+      <a href="./Links/Kurt Bonnici - CV.pdf" class="custom-btn">Open CV</a>
+      <a href="./Links/Kurt Bonnici - Covering Letter.pdf" class="custom-btn">Covering Letter</a>
+    </div>
+  </section>
+
+<br> <br> <br> <br>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-brand">©2025 KURT BONNICI</p>
+    <div class="footer-nav">
+      <a href="aboutme.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap Bundle JS (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Hover effect for carousel -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const customCursor = document.createElement("div");
+        customCursor.id = "custom-cursor";
+        customCursor.innerHTML = "Open Project";
+        document.body.appendChild(customCursor);
+    
+        const carousel = document.querySelector("#carouselExample");
+    
+        carousel.addEventListener("mouseenter", () => {
+          customCursor.style.display = "block";
+          document.body.style.cursor = "none";
+        });
+    
+        carousel.addEventListener("mouseleave", () => {
+          customCursor.style.display = "none";
+          document.body.style.cursor = "auto";
+        });
+    
+        carousel.addEventListener("mousemove", (e) => {
+          const x = e.clientX;
+          const y = e.clientY;
+    
+          customCursor.style.left = `${x}px`;
+          customCursor.style.top = `${y}px`;
+        });
+      });
+    </script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('fade-in');
+  });
+</script>
+
+<script>
+  document.querySelectorAll('a').forEach(link => {
+    if (link.getAttribute('href') && !link.getAttribute('href').startsWith('#') && !link.target) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        document.body.classList.remove('fade-in');
+        document.body.style.opacity = 0;
+        setTimeout(() => window.location.href = href, 300);
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

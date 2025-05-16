@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kurt Bonnici | About Me</title>
+  <link rel="icon" href="./Images/Favicon.png" type="image/png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .about-section p {
+      font-size: 1.5rem;
+      margin-top: 15px;
+      margin-bottom: 40px;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+    
+    .about-section h2 {
+      font-size: 3rem;
+      font-weight: 500;
+      line-height: 50px;
+      color: #000000;
+    }
+
+    .about-section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .skills-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.skills-modern h2 {
+  font-size: 1rem;
+  font-weight: 450;
+  letter-spacing: pt;
+  text-align: left;
+  margin-left: 0px;
+  margin-bottom: 5px;
+}
+
+.skills-modern p {
+  font-size: 3rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 5px 0;
+  color: #000000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  line-height: 0.7;
+}
+
+.skills-modern p:hover {
+  opacity: 0.5;
+  transform: translateX(15px);
+}
+
+.links h2 {
+  margin-bottom: 15px;
+}
+
+.custom-btn {
+  display: inline-block;
+  padding: 5px 20px;
+  font-size: 0.9rem;
+  color: #000;
+  border: 0px solid #000;
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.custom-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.99s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+</head>
+<body>
+
+      <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">KURT BONNICI</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="aboutme.html">About Me</a></li>
+              <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+              <li class="nav-item d-flex align-items-center">
+                <a class="contact-btn" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+  <!-- About Section -->
+  <section class="about-section fade-up">
+    <h2>About Me</h2>
+    <p>Hello! I’m Kurt, a passionate graphic designer with a deep interest in visual storytelling, branding, and experimental design. I enjoy creating clean, thought-provoking visuals that resonate with audiences.</p>
+<br>
+    <h2>What I Do</h2>
+    <p>I specialize in logo design, poster series, product manipulation, and editorial spreads. Each project I create focuses on strong concept development and purposeful design.</p>
+<br>
+    <h2>More</h2>
+    <p>I'm always looking for new creative challenges and collaborations. Feel free to check out my work and get in touch!</p>
+    
+<br>
+
+<!-- Tools & Skills -->
+<div class="skills-modern">
+<h2>TOOLS & SKILLS</h2>
+  <p>Adobe Photoshop</p>
+  <p>Adobe Illustrator</p>
+  <p>Adobe InDesign</p>
+  <p>Typography</p>
+  <p>Layout Design</p>
+  <p>Concept Development</p>
+  <p>Design Systems</p>
+</div>
+
+<br> <br> <br> 
+
+<!-- Links -->
+<div class="links">
+  <div class="skills-modern">
+  <h2>LINKS</h2>
+  <section id="links">
+      <a href="./Links/Kurt Bonnici - CV.pdf" class="custom-btn">Open CV</a>
+      <a href="./Links/Kurt Bonnici - Covering Letter.pdf" class="custom-btn">Covering Letter</a>
+    </div>
+  </div>
+  </section>
+
+<br> <br> 
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-brand">©2025 KURT BONNICI</p>
+    <div class="footer-nav">
+      <a href="aboutme.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('fade-in');
+  });
+</script>
+
+<script>
+  document.querySelectorAll('a').forEach(link => {
+    if (link.getAttribute('href') && !link.getAttribute('href').startsWith('#') && !link.target) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        document.body.classList.remove('fade-in');
+        document.body.style.opacity = 0;
+        setTimeout(() => window.location.href = href, 300);
+      });
+    }
+  });
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
