@@ -171,16 +171,6 @@ color: black;
   color: rgb(0, 0, 0);
 }
 
-/* Card Container */
-.custom-card {
-  transform: perspective(1000px);
-  transition: transform 0.3s ease;
-  }
-
-  .custom-card:hover {
-  transform: perspective(1000px) rotateY(2deg) rotateX(2deg);
-  }
-
 /* Card Image */
 .custom-card {
   border: none;
@@ -343,10 +333,10 @@ color: black;
 .contact-form button {
   padding: 13px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #000;
   border: 0px solid #000;
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.050);
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -373,7 +363,7 @@ html {
   font-size: 0.9rem;
   color: #000;
   border: 0px solid #000;
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.033);
   border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s ease;
